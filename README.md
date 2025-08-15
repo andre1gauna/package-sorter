@@ -24,7 +24,7 @@ A robotic arm needs to classify packages into three different stacks:
 ## 🗂 Project Structure
 ~~~
 
-thoughtful-sort/
+package-sorter/
 ├─ src/
 │ └─ app/
 │   ├─ init.py # Public API (exports sort)
@@ -46,8 +46,8 @@ thoughtful-sort/
 ### 1️⃣ Clone the repository
 ~~~
 
-git clone https://github.com/your-username/thoughtful-sort.git
-cd thoughtful-sort
+git clone https://github.com/andre1gauna/package-sorter
+cd package-sorter
 ~~~
 
 ### 2️⃣ Create a virtual environment with Poetry
@@ -122,5 +122,3 @@ pytest – unit testing
 pytest-cov - test coverage
 pytest-env - environment variable setting and setting
 ~~~
-# package-sorter
-# package-sorter

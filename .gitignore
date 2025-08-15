@@ -1,0 +1,52 @@
+# ========================
+# Python
+# ========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / Packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Logs
+*.log
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Test cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local configuration
+*.env
+.env.*
+!env.example
+
+# Ruff, MyPy, etc.
+.mypy_cache/
+.ruff_cache/
+
+# Poetry
+poetry.lock
+.cache/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db

@@ -1,8 +1,9 @@
-from fastapi import FastAPI
-from src.app.PackageSorting import sort 
+from fastapi import FastAPI, HTTPException
+from app.PackageSorting import sort
 from pydantic import BaseModel
 
 app = FastAPI()
+
 class Package(BaseModel):
     length: int
     width: int
@@ -11,9 +12,14 @@ class Package(BaseModel):
     
 @app.get("/")
 def root():
-    return {"Hello": "World"}
+    return {"app": "Running"}
 
-@app.post("/packages/classify")
-def sort_package(pkg: Package):
-    result = sort(pkg.length, pkg.width, pkg.height, pkg.mass)
-    return {"result": result}
+@app.post("/packages/classify" )
+def sort_package(pkg: Package) -> dict:
+    try:
+        result = sort(pkg.length, pkg.width, pkg.height, pkg.mass)
+        return {"result": result}
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail="Internal server error")

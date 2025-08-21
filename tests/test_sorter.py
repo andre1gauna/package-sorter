@@ -1,7 +1,7 @@
 import pytest
 import math
 
-from app.PackageSorting import sort
+from src.app.PackageSorting import sort
 
 @pytest.mark.parametrize(
 "w, h, l, m, expected",
@@ -28,11 +28,11 @@ from app.PackageSorting import sort
         (151, 149, 149, 20, "REJECTED")
     ]
 )
-def test_sort_valid_inputs(w, h, l, m, expected):
+def test_classifier_valid_inputs(w, h, l, m, expected):
     assert sort(w, h, l, m) == expected
 
 @pytest.mark.parametrize("bad", [None, -10, -0.1, float("-inf"), float("inf"), math.nan])
-def test_sort_invalid_inputs(bad):
+def test_classifier_invalid_inputs(bad):
     valid = (10,10,10,10)
 
     for i in range(4):

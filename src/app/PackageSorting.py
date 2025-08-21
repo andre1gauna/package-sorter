@@ -1,4 +1,3 @@
-
 from typing import Final
 
 MAX_BULKY_DIMENSION: Final[float] = 150.0  # cm
